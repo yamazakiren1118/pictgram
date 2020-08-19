@@ -64,3 +64,4 @@ gem 'jquery'
 gem 'bootstrap-sass'
 gem 'bcrypt'
 gem "carrierwave"
+gem "kaminari",'~> 1.0.1'

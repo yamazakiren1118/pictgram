@@ -1,0 +1,18 @@
+<div class="topic-new-wrapper" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_with(model: @comment,local: true) do |comment| %>
+            <%= comment.hidden_field :user_id,value: current_user %>
+            <%= comment.hidden_field :topic_id,value: params[:topic_id] %>
+          <div class="form-group">
+            <%= comment.label :comment %>
+            <%= comment.text_area :comment,class:'form-control' %>
+          </div>
+          <%= comment.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+<%# url: {controller: 'comments', action: 'create'}  %>
