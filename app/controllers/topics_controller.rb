@@ -1,6 +1,13 @@
 class TopicsController < ApplicationController
   def index
     @topics = Topic.all.includes(:favorite_users)
+    @topic = Topic.find_by(id: params[:topic_id])
+    @page = params[:page]
+    # comment = Comment.new
+    # @topics.each do |topic|
+    #   comment.comment = Comment.find_by(tipic_id: topic.id)
+    # end
+    # binding.pry
   end
   def new
     @topic = Topic.new

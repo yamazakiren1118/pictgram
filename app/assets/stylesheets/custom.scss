@@ -118,9 +118,28 @@ h1, h2 {
       padding-left: 20px;
     }
 
-    .topic-text {
+    .topic-text ,nav.pagination{
       padding-right: 20px;
       padding-left: 20px;
+    }
+    nav.pagination{
+      display:flex;
+      span.current,a{
+        padding:5px;
+        border:solid #aaa;
+        border-width: 1px 0 1px 1px;
+        display:block;
+      }
+      span:first-child,span:first-child a{
+        border-radius: 5px 0 0 5px;
+      }
+      span:last-child{
+        border:solid 1px #aaa;
+        border-radius: 0 5px 5px 0;
+        a{
+          border:none;
+        }
+      }
     }
 
     img {

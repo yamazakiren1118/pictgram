@@ -1,3 +1,4 @@
 <% comment.reverse.each do |comment2| %>
   <p class="comment topic-text"><%= comment2.comment %></p>
 <% end %>
+<%= paginate comment, remote:true, params: {topic_id: topic_id} %>

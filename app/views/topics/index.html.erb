@@ -28,12 +28,11 @@
             <% if !topic.comments.empty? %>
               <h3 class="topic-author">コメント</h3>
             <% end %>
-            <% @comment = Kaminari.paginate_array(topic.comments).page(params[:page]).per(3) %>
+            <div id="paginate_<%= topic.id %>">
+              <%= render partial: 'index',locals:{topic_id: topic.id, comment: topic.comments.page(params[:page]).per(3)}%>
+              
+            </div>
 
-            <%= render partial: 'index',locals:{comment:@comment}%>
-            <%= link_to_next_page @comment, '次' %>
-            <%= page_entries_info(@comment) %>
-            <%= paginate @comment,remote:true %>
           </div>
         </div>
       </div>

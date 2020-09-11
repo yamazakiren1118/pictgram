@@ -1,0 +1,8 @@
+ja:
+  views:
+    pagination:
+      first: 'さいしょ'
+      last: 'さいご'
+      previous: 'まえ'
+      next: 'あと'
+      truncate: '...'
