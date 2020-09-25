@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'contacts/new'
+  get 'messages/new'
   get 'comments/new'
   get 'topics/new'
   get 'sessions/new'
@@ -17,4 +19,8 @@ Rails.application.routes.draw do
   post '/favorites' , to: 'favorites#create'
   post '/favorites/destroy' , to: 'favorites#destroy'
   post '/comments' , to: 'comments#create'
+
+  get 'contacts/new'
+  post '/contact', to: 'contacts#create'
+  mount LetterOpenerWeb::Engine, at:"/letter_opener_web" if Rails.env.development?
 end

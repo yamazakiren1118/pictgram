@@ -1,0 +1,23 @@
+<div class="topic-new-wrapper" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <%= form_with model:@message,url:'/contact',local:true,autocomplete:'off' do |form| %>
+          <%= form.label :名前 %>
+          <div class="form-group form-group-sm">
+            <%= form.text_field :name,autocomplete:'off',class:'form-control'%>
+          </div>
+          <%= form.label :メールアドレス %>
+          <div class="form-group form-group-sm">
+            <%= form.text_field :email,autocomplete:'none',class:'form-control'%>
+          </div>
+          <%= form.label :メッセージ %>
+          <div class="form-group">
+            <%= form.text_area :message,class:'form-control'%>
+          </div>
+          <%= form.submit '送信' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
